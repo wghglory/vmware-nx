@@ -1,0 +1,84 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/global-catalog/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/global-catalog",
+        "index": "apps/global-catalog/src/index.html",
+        "baseHref": "/",
+        "main": "apps/global-catalog/src/main.tsx",
+        "polyfills": "apps/global-catalog/src/polyfills.ts",
+        "tsConfig": "apps/global-catalog/tsconfig.app.json",
+        "assets": [
+          "apps/global-catalog/src/favicon.ico",
+          "apps/global-catalog/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/global-catalog/src/environments/environment.ts",
+              "with": "apps/global-catalog/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "global-catalog:build",
+        "hmr": true,
+        "proxyConfig": "apps/global-catalog/proxy.conf.json"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "global-catalog:build:development"
+        },
+        "production": {
+          "buildTarget": "global-catalog:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/global-catalog/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/global-catalog"],
+      "options": {
+        "jestConfig": "apps/global-catalog/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
