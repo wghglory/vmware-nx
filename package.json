@@ -9,6 +9,9 @@
   },
   "private": true,
   "dependencies": {
+    "@cds/city": "^1.1.0",
+    "@cds/core": "^6.0.0",
+    "@cds/react": "^6.0.0",
     "@emotion/react": "11.9.0",
     "@emotion/styled": "11.8.1",
     "autoprefixer": "^10.4.7",
