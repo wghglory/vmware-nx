@@ -12,10 +12,13 @@ export const App = () => {
 
   return (
     <>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to global-catalog!</h1>
+      <div className="p-10 text-center">
+        <h1 className="text-xl text-red-600 font-semibold">
+          Welcome to global-catalog!
+        </h1>
         <img
           width="450"
+          className="inline-block"
           src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
           alt="Nx - Smart, Fast and Extensible Build System"
         />
