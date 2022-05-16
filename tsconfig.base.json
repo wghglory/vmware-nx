@@ -15,7 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@vmware/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@vmware/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@vmware/constants": ["libs/constants/src/index.ts"],
+      "@vmware/i18n": ["libs/i18n/src/index.ts"],
+      "@vmware/services": ["libs/services/src/index.ts"],
+      "@vmware/shared-ui": ["libs/shared-ui/src/index.ts"],
+      "@vmware/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

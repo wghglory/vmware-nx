@@ -4,7 +4,12 @@
   "projects": {
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
+    "constants": "libs/constants",
     "global-catalog": "apps/global-catalog",
-    "global-catalog-e2e": "apps/global-catalog-e2e"
+    "global-catalog-e2e": "apps/global-catalog-e2e",
+    "i18n": "libs/i18n",
+    "services": "libs/services",
+    "shared-ui": "libs/shared-ui",
+    "utils": "libs/utils"
   }
 }

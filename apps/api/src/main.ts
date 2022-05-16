@@ -1,12 +1,20 @@
 import * as express from 'express';
-import { Message } from '@vmware/api-interfaces';
+import * as bodyParser from 'body-parser';
+import { handleAuth, handleTenant } from './app/handlers';
 
 const app = express();
 
-const greeting: Message = { message: 'Welcome to api!' };
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
+handleAuth(app);
+handleTenant(app);
 
 app.get('/api', (req, res) => {
-  res.send(greeting);
+  res.send({ message: 'hello' });
 });
 
 const port = process.env.port || 3333;
